@@ -67,6 +67,7 @@ const App = () => {
         ></GameStartStage>
       ) : gameOver ? (
         <GameOverStage
+          answer={answer}
           gameWin={gameWin}
           handleGameReset={handleGameReset}
         ></GameOverStage>
