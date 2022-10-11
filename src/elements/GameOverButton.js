@@ -5,7 +5,7 @@ const StyledButtonGameOver = styled.button`
   color: white;
   border: 4px solid white;
   border-radius: 3px;
-  width: 50%;
+  width: 20%;
   height: 70px;
   font-size: 160%;
 
@@ -14,9 +14,9 @@ const StyledButtonGameOver = styled.button`
   }
 
   @media (max-width: 768px) {
-    width: 75%;
+    width: 50%;
     height: 60px;
-    font-size: 150%;
+    font-size: 130%;
   }
 `;
 

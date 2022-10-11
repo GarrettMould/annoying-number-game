@@ -31,7 +31,9 @@ const GamePlayStage = (props) => {
         gameOver={props.gameOver}
         gameWin={props.gameWin}
       ></MainText>
-      {props.guessSubmitted ? null : <UserInput></UserInput>}
+      {props.guessSubmitted ? null : (
+        <UserInput invalidGuess={props.invalidGuess}></UserInput>
+      )}
       {button}
     </>
   );

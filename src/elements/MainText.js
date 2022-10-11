@@ -13,7 +13,7 @@ const StyledHintText = styled.div`
   margin-bottom: 3%;
   @media (max-width: 768px) {
     font-size: 250%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
   }
 `;
 

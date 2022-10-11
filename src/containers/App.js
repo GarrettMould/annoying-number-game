@@ -10,6 +10,7 @@ const App = () => {
   const [stage, setStage] = useState(0);
   const [answer, setAnswer] = useState(null);
   const [guessSubmitted, setGuessSubmitted] = useState(false);
+  const [invalidGuess, setInvalidGuess] = useState(false);
   const [userGuess, setUserGuess] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [gameWin, setGameWin] = useState(null);
@@ -26,17 +27,22 @@ const App = () => {
   const handleGuess = () => {
     let userInput = document.querySelector("#userGuess");
     var guess = parseInt(userInput.value);
-    setUserGuess(guess);
-    setGuessSubmitted(true);
 
-    if (guess === answer) {
-      setGameOver(true);
-      setGameWin(true);
-    }
+    if (guess > 0 && guess <= 50) {
+      setUserGuess(guess);
+      setGuessSubmitted(true);
+      setInvalidGuess(false);
+      if (guess === answer) {
+        setGameOver(true);
+        setGameWin(true);
+      }
 
-    if (stage > 4 && !(guess === answer)) {
-      setGameOver(true);
-      setGameWin(false);
+      if (stage > 4 && !(guess === answer)) {
+        setGameOver(true);
+        setGameWin(false);
+      }
+    } else {
+      setInvalidGuess(true);
     }
   };
 
@@ -73,6 +79,7 @@ const App = () => {
         ></GameOverStage>
       ) : (
         <GamePlayStage
+          invalidGuess={invalidGuess}
           handleAdvanceRound={handleAdvanceRound}
           handleGameStart={handleGameStart}
           handleGuess={handleGuess}

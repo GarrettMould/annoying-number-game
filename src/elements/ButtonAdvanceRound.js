@@ -1,11 +1,14 @@
 import styled from "styled-components";
-
+import { ArrowRight } from "phosphor-react";
 const StyledButtonAdvanceRound = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #4fc3f7;
   color: white;
   border: 4px solid white;
   border-radius: 3px;
-  width: 50%;
+  width: 20%;
   height: 70px;
   font-size: 120%;
 
@@ -14,16 +17,16 @@ const StyledButtonAdvanceRound = styled.button`
   }
 
   @media (max-width: 768px) {
-    width: 75%;
+    width: 50%;
     height: 60px;
-    font-size: 150%;
+    font-size: 130%;
   }
 `;
 
 const ButtonAdvanceRound = (props) => {
   return (
     <StyledButtonAdvanceRound onClick={props.handleAdvanceRound}>
-      &#8594;
+      <ArrowRight size={32} weight="bold" />
     </StyledButtonAdvanceRound>
   );
 };
