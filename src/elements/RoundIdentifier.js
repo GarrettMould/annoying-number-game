@@ -11,6 +11,7 @@ const StyledRoundIdentifier = styled.div`
   color: white;
   font-size: 200%;
   font-weight: 700;
+  margin-bottom: 3%;
 `;
 
 const RoundIdentifier = (props) => {

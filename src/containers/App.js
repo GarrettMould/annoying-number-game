@@ -1,5 +1,5 @@
 import styles from "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import GameStartStage from "../components/GameStartStage";
 import GameOverStage from "../components/GameOverStage";
@@ -18,6 +18,11 @@ const App = () => {
   const randomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
+
+  // Reset invalidGuess to remove css animation className from input
+  useEffect(() => {
+    setTimeout(() => setInvalidGuess(false), 2000);
+  }, [invalidGuess]);
 
   const handleGameStart = () => {
     setAnswer(randomInt(1, 50));
